@@ -104,14 +104,18 @@ Our implementation correctly builds the **Inverted Residual Block**, which is ch
 
 ## 📈 Results and Performance
 
-*(**Note:** You must fill this section in after you complete your training.)*
-
 The model was trained from scratch for **[48/100 of Epochs]** epochs. The training was completed in approximately **[6.5]** hours on the Laptop GPU RTX 4060.
 
 The following results were achieved on the validation set:
 
 * **Final Validation Accuracy:** **[98.4]%**
 * **Final Validation Loss:** **[0.05]%**
+
+---
+
+## Model for Users Use
+
+You can Find the best model in `/models` folder as mobilenetv2_from_scratch.keras
 
 ---
 
