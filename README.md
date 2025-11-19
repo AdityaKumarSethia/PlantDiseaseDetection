@@ -102,7 +102,7 @@ PlantDiseaseDetection/
 ├── models/
 │   └── mobilenetv2_from_scratch.keras
 ├── notebooks/
-├── main.py
+├── test_prediction.py
 └── ...
 
 ```
