@@ -1,0 +1,16 @@
+# Number Crunching
+numpy
+pandas
+
+# Data Visualization
+matplotlib
+seaborn
+
+# UI for app.py
+streamlit
+
+# DL Framework
+tensorflow
+
+# Utils
+tqdm
