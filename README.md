@@ -93,7 +93,7 @@ To run this project, you need the **New Plant Diseases Dataset (Augmented)**.
 After extraction, your project folder should look exactly like this:
 
 ```text
-root/
+PlantDiseaseDetection/
 ├── New Plant Diseases Dataset(Augmented)/
 │   ├── train/          # Contains 38 disease subfolders
 │   └── valid/          # Contains 38 disease subfolders
@@ -142,14 +142,14 @@ jupyter notebook
 
 ## 📈 Results and Performance
 
-The model was trained from scratch for **[48/100 of Epochs]** epochs. The training was completed in approximately **[8.5]** hours on the Laptop GPU RTX 4060.
+The model was trained from scratch for 48 epochs (stopped early via callback). The training was completed in approximately **[8.5]** hours on the Laptop GPU RTX 4060.
 
 The following results were achieved on the validation set:
 
 * **Final Validation Accuracy:** **[98.4]%**
-* **Final Validation Loss:** **[0.05]%**
+* **Final Validation Loss:** **[0.057]**
 
-And This are the images of my Test Output and Confusion Matrix :
+Below are the visualizations of the Test Output and Confusion Matrix :
 
 1. **Confusion Matrix**
 ![Confusion Matrix](assets/confustion_matrix.png)
