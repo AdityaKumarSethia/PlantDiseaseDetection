@@ -66,59 +66,94 @@ Our implementation correctly builds the **Inverted Residual Block**, which is ch
 
 ## 🚀 How to Run
 
-1.  **Clone the repository:**
+### Clone the repository:
+    
     ```bash
     git clone https://github.com/AdityaKumarSethia/PlantDiseaseDetection 
     ```
 
-2.  **Create a virtual environment and install dependencies:**
+### Create a virtual environment and install dependencies:
+    
     ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     pip install -r requirements.txt
     ```
 
-3.  **Download the data:**
-    Download the dataset from the [Kaggle link](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset) and unzip it. The `train.py` script expects the following directory structure:
-    ```
-    New Plant Diseases Dataset(Augmented)/
-    ├── train/
-    │   ├── Tomato___Late_blight/
-    │   └── ... (37 more classes)
-    └── valid/
-        ├── Tomato___Late_blight/
-        └── ... (37 more classes)
-    ```
-    Update the `train_dir` and `valid_dir` variables in the script if your paths are different.
+### 📥 Downloading the Dataset
 
-4.  **Run training:**
-    ```bash
-    notebooks/MobileNetv2.ipynb
-    ```
-5.  **Make a prediction:**
-    ```bash
-    notebooks/ModelTesting.ipynb
-    ```
+To run this project, you need the **New Plant Diseases Dataset (Augmented)**.
+
+1.  **Download:** Go to the Kaggle dataset page: [New Plant Diseases Dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset).
+2.  **Extract:** Download the archive and unzip it directly into the **root folder** of this project.
+3.  **Test Images:** Create a folder named `test/test/` in the root directory and place your unlabelled test images there (or use the sample images provided in the repository).
+
+**Required Directory Structure:**
+
+After extraction, your project folder should look exactly like this:
+
+```text
+root/
+├── New Plant Diseases Dataset(Augmented)/
+│   ├── train/          # Contains 38 disease subfolders
+│   └── valid/          # Contains 38 disease subfolders
+├── test/
+│   └── test/           # Place your 33+ random test images here
+├── models/
+│   └── mobilenetv2_from_scratch.keras
+├── notebooks/
+├── main.py
+└── ...
+
+```
+
+### ⚡ Quick Evaluation (Skip Training)
+**⚠️ Important: Training this model from scratch takes approximately 8 to 12 hours on an NVIDIA RTX 4060 GPU.**
+
+For evaluation and grading purposes, do not run the training script. Instead, use the pre-trained model and evaluation scripts provided below to verify the results instantly.
+
+**Option 1: Run the Python Script (Recommended)**\
+We have provided a standalone script that loads the saved model, predicts on the test folder, and generates a visual result grid.
+
+Open your terminal in the project root.
+
+Run the following command:
+```bash
+python test_prediction.py
+```
+>>Output: This will generate a file named test_results_grid.png in your folder, showing the predictions and confidence scores for your test images.
+
+**Option 2: Interactive Notebook**\
+If you want to see the confusion matrix and classification report interactively:
+
++ Open Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+1. Navigate to notebooks/ and open ModelTesting.ipynb.
+2. Run all cells. This will:
+3. Load the pre-trained model.
+4. Calculate Accuracy (98.4%) and Loss on the validation set.
+5. Display the Confusion Matrix and Classification Report.
+6. Show the visual prediction grid.
 
 ---
 
 ## 📈 Results and Performance
 
-The model was trained from scratch for **[48/100 of Epochs]** epochs. The training was completed in approximately **[6.5]** hours on the Laptop GPU RTX 4060.
+The model was trained from scratch for **[48/100 of Epochs]** epochs. The training was completed in approximately **[8.5]** hours on the Laptop GPU RTX 4060.
 
 The following results were achieved on the validation set:
 
 * **Final Validation Accuracy:** **[98.4]%**
 * **Final Validation Loss:** **[0.05]%**
 
+And This are the images of my Test Output and Confusion Matrix :
+
+1. **Confusion Matrix**
+![Confusion Matrix](assets/confustion_matrix.png)
+
+2. **Test Output**
+![Test](assets/testOutput.png)
 ---
-
-## Model for Users Use
-
-You can Find the best model in `/models` folder as mobilenetv2_from_scratch.keras
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
